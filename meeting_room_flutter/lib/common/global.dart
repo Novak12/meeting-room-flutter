@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:meetingroomflutter/models/cacheConfig.dart';
 import 'package:meetingroomflutter/models/profile.dart';
 
+import 'CacheObject.dart';
+import 'Git.dart';
+
 const _themes = <MaterialColor>[
   Colors.blue,
   Colors.cyan,
