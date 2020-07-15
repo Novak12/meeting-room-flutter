@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a81aafe3-9048-4a5f-babf-e18fd81a98c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/kotlin/com/example/meetingroomflutter/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/jsons/cacheConfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/jsons/profile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/jsons/repo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/jsons/user.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/common/CacheObject.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/common/Git.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/common/ProfileChangeNotifier.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/common/global.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/LocaleModel.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/ThemeModel.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/UserModel.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/cacheConfig.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/cacheConfig.g.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/index.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/profile.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/profile.g.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/repo.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/repo.g.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/user.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/models/user.g.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/routes/HomeRoute.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/widgets/DemoItem.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/widgets/DemoPage.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/widgets/DomeStateWidget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/widgets/MyDrawer.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/lib/widgets/RepoItem.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meeting_room_flutter/test/widget_test.dart" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ehZmH04UZ67xDX2CO3mBgINWqS" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a81aafe3-9048-4a5f-babf-e18fd81a98c3" name="Default Changelist" comment="" />
+      <created>1594775942123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594775942123</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
