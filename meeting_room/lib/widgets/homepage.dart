@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boom_menu/flutter_boom_menu.dart';
+import 'package:meetingroom/util/constance.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -31,9 +34,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      //drawer: DrawerWidget(),
+
+      floatingActionButton: BoomMenu(
+          animatedIcon: AnimatedIcons.menu_close,
+          animatedIconTheme: IconThemeData(size: 22.0),
+          scrollVisible: true,
+          overlayColor: Colors.black,
+          overlayOpacity: 0.7,
+          foregroundColor: Colors.white,
+          child: Icon(Icons.sort),
+          children: [
+            MenuItem(
+              child: Icon(
+                FontAwesomeIcons.sort,
+                color: Colors.white,
+              ),
+              title: "Sort by total cases",
+              titleColor: Colors.white,
+              subtitle: "",
+              subTitleColor: Colors.white,
+              backgroundColor: Colors.blue[600],
+              onTap: () => sortBy(sortBy: cases),
+            ),
+          ]),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,11 +84,10 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  Future<void> sortBy({String sortBy}) async {
+    //await CoronaBloc().getAllCountriesInfoSortedBy(sortBy: sortBy);
   }
 }
