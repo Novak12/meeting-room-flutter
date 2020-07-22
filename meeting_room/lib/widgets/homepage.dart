@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _AppBarWidget extends StatelessWidget {
-  final ScreenshotController screenshotController = ScreenshotController();
+  //final ScreenshotController screenshotController = ScreenshotController();
 
   _AppBarWidget({Key key}) : super(key: key);
 
@@ -123,7 +123,7 @@ class _AppBarWidget extends StatelessWidget {
               onPressed: () {
                 CoronaSharedPreferences().saveShowFavorite(!showFavorite);
                 setState(
-                      () {
+                  () {
 //                    FAVORITE_EVENT favoriteEvent = showFavorite
 //                        ? FAVORITE_EVENT.NO_FAVORITE
 //                        : FAVORITE_EVENT.SHOW_FAVORITE;
@@ -140,13 +140,13 @@ class _AppBarWidget extends StatelessWidget {
           builder: (BuildContext context, StateSetter setState) {
             bool darkThemeOn = CoronaSharedPreferences().darkThemeOn;
             return IconButton(
-                tooltip: "Dark/Light Mode",
-                iconSize: 20,
-                icon: Icon(
-                    darkThemeOn
-                        ? FontAwesomeIcons.solidMoon
-                        : FontAwesomeIcons.moon,
-                    color: darkThemeOn ? Colors.yellowAccent : Colors.white),
+              tooltip: "Dark/Light Mode",
+              iconSize: 20,
+              icon: Icon(
+                  darkThemeOn
+                      ? FontAwesomeIcons.solidMoon
+                      : FontAwesomeIcons.moon,
+                  color: darkThemeOn ? Colors.yellowAccent : Colors.white),
 //                onPressed: () {
 //                  CoronaSharedPreferences().saveDarkTheme(!darkThemeOn);
 //                  final ThemeProvider themeProvider =
@@ -154,7 +154,7 @@ class _AppBarWidget extends StatelessWidget {
 //                  themeProvider.setThemeData = darkThemeOn;
 //                  setState(() {});
 //                }
-                );
+            );
           },
         ),
         IconButton(
@@ -346,4 +346,3 @@ class _AppBarWidget extends StatelessWidget {
 //    Share.share(msg, subject: "Total Global Info");
   }
 }
-
