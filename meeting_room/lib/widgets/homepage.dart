@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boom_menu/flutter_boom_menu.dart';
+import 'package:meetingroom/repository/shared_preferences.dart';
 import 'package:meetingroom/util/constance.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'drawer/drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -34,8 +37,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //drawer: DrawerWidget(),
-
+      drawer: DrawerWidget(),
+      appBar: PreferredSize(
+        child: _AppBarWidget(),
+        preferredSize: Size.fromHeight(130),
+      ),
       floatingActionButton: BoomMenu(
           animatedIcon: AnimatedIcons.menu_close,
           animatedIconTheme: IconThemeData(size: 22.0),
@@ -91,3 +97,253 @@ class _HomePageState extends State<HomePage> {
     //await CoronaBloc().getAllCountriesInfoSortedBy(sortBy: sortBy);
   }
 }
+
+class _AppBarWidget extends StatelessWidget {
+  final ScreenshotController screenshotController = ScreenshotController();
+
+  _AppBarWidget({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      elevation: 5,
+      centerTitle: true,
+      actions: <Widget>[
+        StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            bool showFavorite = CoronaSharedPreferences().showFavorite;
+            return IconButton(
+              tooltip: "Show Favorite",
+              iconSize: 20,
+              icon: Icon(
+                  showFavorite
+                      ? FontAwesomeIcons.solidStar
+                      : FontAwesomeIcons.star,
+                  color: showFavorite ? Colors.yellowAccent : Colors.white),
+              onPressed: () {
+                CoronaSharedPreferences().saveShowFavorite(!showFavorite);
+                setState(
+                      () {
+//                    FAVORITE_EVENT favoriteEvent = showFavorite
+//                        ? FAVORITE_EVENT.NO_FAVORITE
+//                        : FAVORITE_EVENT.SHOW_FAVORITE;
+//                    CoronaBloc()
+//                        .favoriteEventBehaviorSubject$
+//                        .add(favoriteEvent);
+                  },
+                );
+              },
+            );
+          },
+        ),
+        StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            bool darkThemeOn = CoronaSharedPreferences().darkThemeOn;
+            return IconButton(
+                tooltip: "Dark/Light Mode",
+                iconSize: 20,
+                icon: Icon(
+                    darkThemeOn
+                        ? FontAwesomeIcons.solidMoon
+                        : FontAwesomeIcons.moon,
+                    color: darkThemeOn ? Colors.yellowAccent : Colors.white),
+//                onPressed: () {
+//                  CoronaSharedPreferences().saveDarkTheme(!darkThemeOn);
+//                  final ThemeProvider themeProvider =
+//                  Provider.of<ThemeProvider>(context, listen: false);
+//                  themeProvider.setThemeData = darkThemeOn;
+//                  setState(() {});
+//                }
+                );
+          },
+        ),
+        IconButton(
+          tooltip: "Search",
+          iconSize: 20,
+          icon: Icon(FontAwesomeIcons.search),
+//          onPressed: () {
+//            showSearch<dynamic>(
+//              context: context,
+//              delegate: CustomSearchDelegate(),
+//            );
+//          },
+        )
+      ],
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(80),
+        child: Container(
+          decoration: UnderlineTabIndicator(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+          height: 70,
+          alignment: Alignment.center,
+//          child: StreamBuilder<GlobalInfoDto>(
+//            stream: CoronaBloc().globalInfoDtoBehaviorSubject$.stream,
+//            builder: (context, snapshot) {
+//              GlobalInfoDto globalInfoDto = CoronaBloc().globalInfoDto$;
+//              if (snapshot.hasData || globalInfoDto != null) {
+//                globalInfoDto = snapshot.data ?? globalInfoDto;
+//                return GestureDetector(
+//                  child: RichText(
+//                    text: TextSpan(
+//                      text: 'Total Cases: ',
+//                      style: GoogleFonts.varelaRound(
+//                          fontWeight: FontWeight.bold, fontSize: 16),
+//                      children: <TextSpan>[
+//                        TextSpan(
+//                          text: '${globalInfoDto.cases}',
+//                          style: TextStyle(
+//                            fontWeight: FontWeight.bold,
+//                            backgroundColor: Colors.blue[600],
+//                          ),
+//                        ),
+//                        TextSpan(text: '\nTotal Deaths: '),
+//                        TextSpan(
+//                          text: '${globalInfoDto.deaths}',
+//                          style: TextStyle(
+//                              fontWeight: FontWeight.bold,
+//                              backgroundColor: Colors.red[600]),
+//                        ),
+//                        TextSpan(text: '\nTotal Recovered: '),
+//                        TextSpan(
+//                          text: '${globalInfoDto.recovered}',
+//                          style: TextStyle(
+//                            fontWeight: FontWeight.bold,
+//                            backgroundColor: Colors.green[600],
+//                          ),
+//                        ),
+//                      ],
+//                    ),
+//                  ),
+//                  onTap: () {
+//                    _showDialog(context);
+//                  },
+//                );
+//              } else {
+//                return Text('');
+//              }
+//            },
+//          ),
+        ),
+      ),
+      title: InkWell(
+//        child: StreamBuilder<GlobalInfoDto>(
+//          stream: CoronaBloc().globalInfoDtoBehaviorSubject$.stream,
+//          builder: (context, snapshot) {
+//            GlobalInfoDto globalInfoDto = CoronaBloc().globalInfoDto$;
+//            if (snapshot.hasData) {
+//              globalInfoDto = snapshot.data;
+//            }
+//            String dateText = "";
+//            if (globalInfoDto != null && globalInfoDto.updatedDate != null) {
+//              dateText =
+//                  globalInfoDto.updatedDate + " " + globalInfoDto.updatedTime;
+//            }
+//            return RichText(
+//              text: TextSpan(
+//                text: 'Global Cases  ',
+//                style: GoogleFonts.concertOne(
+//                    fontWeight: FontWeight.bold, fontSize: 25),
+//                children: <TextSpan>[
+//                  if (dateText != "") ...{
+//                    TextSpan(
+//                      text: '\n$dateText',
+//                      style: TextStyle(fontSize: 15),
+//                    )
+//                  }
+//                ],
+//              ),
+//            );
+//          },
+//        ),
+        onTap: _launchURL,
+      ),
+    );
+  }
+
+  Future<void> _launchURL() async {
+//    if (await canLaunch(corona_main_site)) {
+//      await launch(corona_main_site, enableJavaScript: true);
+//    }
+  }
+
+  void _showDialog(BuildContext context) {
+//    showSlideDialog(
+//        backgroundColor: blueGrey_900,
+//        context: context,
+//        child: Container(
+//          child: Column(
+//            children: <Widget>[
+//              Row(
+//                crossAxisAlignment: CrossAxisAlignment.center,
+//                mainAxisAlignment: MainAxisAlignment.center,
+//                children: <Widget>[
+//                  IconButton(
+//                    tooltip: "Capure Screen",
+//                    icon: Icon(
+//                      FontAwesomeIcons.camera,
+//                      color: Colors.white,
+//                    ),
+//                    onPressed: () {
+//                      screenshotController
+//                          .capture(
+//                          pixelRatio: 1.5,
+//                          delay: Duration(milliseconds: 10))
+//                          .then(
+//                            (File image) async {
+//                          await ShareExtend.share(image.path, "image",
+//                              subject: "Total Cases");
+//                        },
+//                      );
+//                    },
+//                  ),
+//                  IconButton(
+//                    tooltip: "Share",
+//                    icon: Icon(
+//                      FontAwesomeIcons.share,
+//                      color: Colors.white,
+//                    ),
+//                    onPressed: _shareGlobalInfo,
+//                  )
+//                ],
+//              ),
+//              Screenshot(
+//                controller: screenshotController,
+//                child: PieChartImpl(
+//                  textColor: Colors.white,
+//                  dataMap: _getPieChartData(),
+//                ),
+//              )
+//            ],
+//          ),
+//        ),
+//        barrierColor: Colors.white.withOpacity(0.7),
+//        pillColor: Colors.white);
+  }
+
+  Map<String, double> _getPieChartData() {
+    Map<String, double> dataMap = Map();
+//    dataMap.putIfAbsent("Total Cases : ${CoronaBloc().globalInfoDto$.cases}",
+//            () => CoronaBloc().globalInfoDto$.cases.toDouble());
+//    dataMap.putIfAbsent(
+//        "Total Recovered : ${CoronaBloc().globalInfoDto$.recovered}",
+//            () => CoronaBloc().globalInfoDto$.recovered.toDouble());
+//    dataMap.putIfAbsent("Total Deaths : ${CoronaBloc().globalInfoDto$.deaths}",
+//            () => CoronaBloc().globalInfoDto$.deaths.toDouble());
+
+    return dataMap;
+  }
+
+  void _shareGlobalInfo() {
+//    var msg = CoronaBloc()
+//        .globalInfoDto$
+//        .toJson()
+//        .toString()
+//        .replaceAll("{", "")
+//        .replaceAll("}", "");
+//
+//    msg = "Total Cases \n" + msg + '\n\n' + google_play_app_url;
+//    Share.share(msg, subject: "Total Global Info");
+  }
+}
+
