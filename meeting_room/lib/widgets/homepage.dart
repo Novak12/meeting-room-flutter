@@ -10,15 +10,6 @@ import 'drawer/drawer_widget.dart';
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -40,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       drawer: DrawerWidget(),
       appBar: PreferredSize(
         child: _AppBarWidget(),
-        preferredSize: Size.fromHeight(130),
+        preferredSize: Size.fromHeight(60),
       ),
       floatingActionButton: BoomMenu(
           animatedIcon: AnimatedIcons.menu_close,
@@ -106,156 +97,27 @@ class _AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 5,
+      elevation: 15,
       centerTitle: true,
-      actions: <Widget>[
-        StatefulBuilder(
-          builder: (BuildContext context, StateSetter setState) {
-            bool showFavorite = CoronaSharedPreferences().showFavorite;
-            return IconButton(
-              tooltip: "Show Favorite",
-              iconSize: 20,
-              icon: Icon(
-                  showFavorite
-                      ? FontAwesomeIcons.solidStar
-                      : FontAwesomeIcons.star,
-                  color: showFavorite ? Colors.yellowAccent : Colors.white),
-              onPressed: () {
-                CoronaSharedPreferences().saveShowFavorite(!showFavorite);
-                setState(
-                  () {
-//                    FAVORITE_EVENT favoriteEvent = showFavorite
-//                        ? FAVORITE_EVENT.NO_FAVORITE
-//                        : FAVORITE_EVENT.SHOW_FAVORITE;
-//                    CoronaBloc()
-//                        .favoriteEventBehaviorSubject$
-//                        .add(favoriteEvent);
-                  },
-                );
-              },
-            );
-          },
-        ),
-        StatefulBuilder(
-          builder: (BuildContext context, StateSetter setState) {
-            bool darkThemeOn = CoronaSharedPreferences().darkThemeOn;
-            return IconButton(
-              tooltip: "Dark/Light Mode",
-              iconSize: 20,
-              icon: Icon(
-                  darkThemeOn
-                      ? FontAwesomeIcons.solidMoon
-                      : FontAwesomeIcons.moon,
-                  color: darkThemeOn ? Colors.yellowAccent : Colors.white),
-//                onPressed: () {
-//                  CoronaSharedPreferences().saveDarkTheme(!darkThemeOn);
-//                  final ThemeProvider themeProvider =
-//                  Provider.of<ThemeProvider>(context, listen: false);
-//                  themeProvider.setThemeData = darkThemeOn;
-//                  setState(() {});
-//                }
-            );
-          },
-        ),
-        IconButton(
-          tooltip: "Search",
-          iconSize: 20,
-          icon: Icon(FontAwesomeIcons.search),
-//          onPressed: () {
-//            showSearch<dynamic>(
-//              context: context,
-//              delegate: CustomSearchDelegate(),
-//            );
-//          },
-        )
-      ],
-      bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(80),
-        child: Container(
-          decoration: UnderlineTabIndicator(
-            borderSide: BorderSide(color: Colors.white),
-          ),
-          height: 70,
-          alignment: Alignment.center,
-//          child: StreamBuilder<GlobalInfoDto>(
-//            stream: CoronaBloc().globalInfoDtoBehaviorSubject$.stream,
-//            builder: (context, snapshot) {
-//              GlobalInfoDto globalInfoDto = CoronaBloc().globalInfoDto$;
-//              if (snapshot.hasData || globalInfoDto != null) {
-//                globalInfoDto = snapshot.data ?? globalInfoDto;
-//                return GestureDetector(
-//                  child: RichText(
-//                    text: TextSpan(
-//                      text: 'Total Cases: ',
-//                      style: GoogleFonts.varelaRound(
-//                          fontWeight: FontWeight.bold, fontSize: 16),
-//                      children: <TextSpan>[
-//                        TextSpan(
-//                          text: '${globalInfoDto.cases}',
-//                          style: TextStyle(
-//                            fontWeight: FontWeight.bold,
-//                            backgroundColor: Colors.blue[600],
-//                          ),
-//                        ),
-//                        TextSpan(text: '\nTotal Deaths: '),
-//                        TextSpan(
-//                          text: '${globalInfoDto.deaths}',
-//                          style: TextStyle(
-//                              fontWeight: FontWeight.bold,
-//                              backgroundColor: Colors.red[600]),
-//                        ),
-//                        TextSpan(text: '\nTotal Recovered: '),
-//                        TextSpan(
-//                          text: '${globalInfoDto.recovered}',
-//                          style: TextStyle(
-//                            fontWeight: FontWeight.bold,
-//                            backgroundColor: Colors.green[600],
-//                          ),
-//                        ),
-//                      ],
-//                    ),
-//                  ),
-//                  onTap: () {
-//                    _showDialog(context);
-//                  },
-//                );
-//              } else {
-//                return Text('');
-//              }
-//            },
-//          ),
-        ),
-      ),
+      // bottom: PreferredSize(
+      //   preferredSize: const Size.fromHeight(40),
+      //   child: Container(
+      //     decoration: UnderlineTabIndicator(
+      //       borderSide: BorderSide(color: Colors.white),
+      //     ),
+      //     height: 40,
+      //     alignment: Alignment.center,
+      //   ),
+      // ),
       title: InkWell(
-//        child: StreamBuilder<GlobalInfoDto>(
-//          stream: CoronaBloc().globalInfoDtoBehaviorSubject$.stream,
-//          builder: (context, snapshot) {
-//            GlobalInfoDto globalInfoDto = CoronaBloc().globalInfoDto$;
-//            if (snapshot.hasData) {
-//              globalInfoDto = snapshot.data;
-//            }
-//            String dateText = "";
-//            if (globalInfoDto != null && globalInfoDto.updatedDate != null) {
-//              dateText =
-//                  globalInfoDto.updatedDate + " " + globalInfoDto.updatedTime;
-//            }
-//            return RichText(
-//              text: TextSpan(
-//                text: 'Global Cases  ',
-//                style: GoogleFonts.concertOne(
-//                    fontWeight: FontWeight.bold, fontSize: 25),
-//                children: <TextSpan>[
-//                  if (dateText != "") ...{
-//                    TextSpan(
-//                      text: '\n$dateText',
-//                      style: TextStyle(fontSize: 15),
-//                    )
-//                  }
-//                ],
-//              ),
-//            );
-//          },
-//        ),
+        child: StreamBuilder(
+          builder: (context, snapshot) {
+            return RichText(
+              text: TextSpan(
+                  text: "Meeting Room", style: TextStyle(fontSize: 30)),
+            );
+          },
+        ),
         onTap: _launchURL,
       ),
     );
