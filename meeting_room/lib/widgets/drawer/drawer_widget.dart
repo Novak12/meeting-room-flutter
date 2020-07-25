@@ -49,17 +49,7 @@ class DrawerWidget extends StatelessWidget {
   ListTile _buildShareListTile(BuildContext context) {
     return ListTile(
       title: _buildDrawerRow('Share app', FontAwesomeIcons.share, context),
-      onTap: () {
-//        FireBaseManager().sendAnalyticsShareEvent(
-//          contentType: share_app_button,
-//          itemId: share_app_button,
-//          method: "DrawerWidget",
-//        );
-//        Share.share(
-//          google_play_app_url,
-//          subject: appName,
-//        );
-      },
+      onTap: () {},
     );
   }
 
