@@ -1,11 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boom_menu/flutter_boom_menu.dart';
-import 'package:meetingroom/repository/shared_preferences.dart';
-import 'package:meetingroom/util/constance.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:meetingroom/widgets/homepage_listview.dart';
-
+import 'package:meetingroom/models/meetingroom.dart';
 import 'drawer/drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,126 +13,77 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<MeetingRoom> _allRooms = MeetingRoom.allRooms();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: DrawerWidget(),
-        appBar: PreferredSize(
-          child: _AppBarWidget(),
-          preferredSize: Size.fromHeight(60),
-        ),
-        floatingActionButton: BoomMenu(
-            animatedIcon: AnimatedIcons.menu_close,
-            animatedIconTheme: IconThemeData(size: 22.0),
-            scrollVisible: true,
-            overlayColor: Colors.black,
-            overlayOpacity: 0.7,
-            foregroundColor: Colors.white,
-            child: Icon(Icons.sort),
-            children: [
-              MenuItem(
-                child: Icon(
-                  FontAwesomeIcons.sort,
-                  color: Colors.white,
-                ),
-                title: "Sort by total cases",
-                titleColor: Colors.white,
-                subtitle: "",
-                subTitleColor: Colors.white,
-                backgroundColor: Colors.blue[600],
-                onTap: () => sortBy(sortBy: cases),
-              ),
-            ]),
-        body: new Scrollbar(
-            child: new ListView.separated(
-                itemBuilder: (context, item) {
-                  return _myListWidget(context, titleItems[item],
-                      iconItems[item], subTitleItems[item]);
-                },
-                separatorBuilder: (BuildContext context, int index) =>
-                    new Divider(),
-                itemCount: iconItems.length)));
-  }
-
-  List<String> titleItems = <String>[
-    'Beijing',
-    'Munich',
-    'Shanghai',
-    'Tokyo',
-    'Chicago',
-    'Now York',
-    'Berlin',
-    'London',
-    'Paris',
-    'Wuhan',
-  ];
-
-  List<Icon> iconItems = <Icon>[
-    new Icon(Icons.keyboard),
-    new Icon(Icons.print),
-    new Icon(Icons.router),
-    new Icon(Icons.pages),
-    new Icon(Icons.zoom_out_map),
-    new Icon(Icons.zoom_out),
-    new Icon(Icons.youtube_searched_for),
-    new Icon(Icons.wifi_tethering),
-    new Icon(Icons.wifi_lock),
-    new Icon(Icons.widgets),
-    new Icon(Icons.weekend),
-    new Icon(Icons.web),
-    new Icon(Icons.accessible),
-    new Icon(Icons.ac_unit),
-  ];
-
-  List<String> subTitleItems = <String>[
-    'Changzhi 5F',
-    'Changzhi 5F',
-    'Changzhi 5F',
-    'Changzhi 5F',
-    'Changzhi 5F',
-    'Changzhi 6F',
-    'Changzhi 6F',
-    'Changzhi 6F',
-    'sChangzhi 6F',
-    'Changzhi 6F',
-    'Changzhi 6F',
-  ];
-
-  Widget _myListWidget(BuildContext context, String titleItem, Icon iconItem,
-      String subTitleItem) {
-    return new ListTile(
-      leading: iconItem,
-      title: new Text(
-        titleItem,
-        style: TextStyle(fontSize: 18),
+      drawer: DrawerWidget(),
+      appBar: PreferredSize(
+        child: _AppBarWidget(),
+        preferredSize: Size.fromHeight(60),
       ),
-      subtitle: new Text(
-        subTitleItem,
-      ),
-      trailing: new Icon(Icons.keyboard_arrow_right),
-      onTap: () {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return new AlertDialog(
-              title: new Text(
-                'ListViewAlert',
-                style: new TextStyle(
-                  color: Colors.black54,
-                  fontSize: 18.0,
-                ),
-              ),
-              content: new Text('您选择的item内容为:$titleItem'),
-            );
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+        child: ListView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            return _getItemUI(context, index);
           },
-        );
-      },
+          itemCount: _allRooms.length,
+        ),
+      ),
     );
   }
 
-  Future<void> sortBy({String sortBy}) async {
-    //await CoronaBloc().getAllCountriesInfoSortedBy(sortBy: sortBy);
+  Widget _getItemUI(BuildContext context, int index) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            leading: Image.asset(
+              _allRooms[index].image,
+              //fit: BoxFit.cover,
+              width: 100.0,
+              height: 140.0,
+            ),
+            title: Text(
+              _allRooms[index].name,
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+            subtitle: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  _allRooms[index].country,
+                  style: TextStyle(
+                    fontSize: 15.0,
+                  ),
+                ),
+                Text(
+                  "Population: ${_allRooms[index].population}",
+                  style: TextStyle(
+                    fontSize: 14.0,
+                  ),
+                ),
+              ],
+            ),
+            onTap: () {
+              //_showSnackBar(context, _allRooms[index]);
+            },
+          )
+        ],
+      ),
+    );
+  }
+
+  _showSnackBar(BuildContext context, MeetingRoom item) {
+    Scaffold.of(context).showSnackBar(
+      SnackBar(
+        content: Text("${item.name} is a city in ${item.country}"),
+        backgroundColor: Colors.amber,
+      ),
+    );
   }
 }
 
