@@ -55,21 +55,23 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  _allRooms[index].country,
+                  _allRooms[index].location,
                   style: TextStyle(
                     fontSize: 15.0,
                   ),
                 ),
                 Text(
-                  "Population: ${_allRooms[index].population}",
+                  "预订情况: ${_allRooms[index].status}",
                   style: TextStyle(
                     fontSize: 14.0,
                   ),
                 ),
               ],
             ),
+            trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
-              //_showSnackBar(context, _allRooms[index]);
+              Navigator.of(context)
+                  .pushNamed("booking_page", arguments: _allRooms[index].name);
             },
           )
         ],
@@ -80,7 +82,7 @@ class _HomePageState extends State<HomePage> {
   _showSnackBar(BuildContext context, MeetingRoom item) {
     Scaffold.of(context).showSnackBar(
       SnackBar(
-        content: Text("${item.name} is a city in ${item.country}"),
+        content: Text("${item.name} is a city in ${item.location}"),
         backgroundColor: Colors.amber,
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meetingroom/widgets/bookingpage.dart';
 import 'package:meetingroom/widgets/homepage.dart';
 import 'package:meetingroom/widgets/login.dart';
 
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       //用注册表来注册路由
       routes: {
         "/": (context) => Login(),
-        "home_page": (context) => HomePage(title: "flutter")
+        "home_page": (context) => HomePage(title: "flutter"),
+        "booking_page": (context) => BookingPage(),
       },
     );
   }
