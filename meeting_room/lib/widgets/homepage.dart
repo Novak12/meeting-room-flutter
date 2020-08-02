@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _getItemUI(BuildContext context, int index) {
     return Card(
+      margin: EdgeInsets.all(5),
       child: Column(
         children: <Widget>[
           ListTile(

@@ -25,7 +25,7 @@ class MeetingRoom {
       image: "assets/london.png",
     ));
     roomes.add(MeetingRoom(
-      name: "shanghai",
+      name: "Shanghai",
       location: "Changzhi 6F",
       status: "今日已满",
       image: "assets/shanghai.png",
