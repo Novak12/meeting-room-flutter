@@ -73,7 +73,7 @@ class _BookingPageState extends State<BookingPage> {
     return TableRow(
         //第一行样式 添加背景色
         children: [
-          _buildSideBox(index == -1 ? '实重' : "2676.30", index == -1),
+          _buildSideBox(index == -1 ? '时间段' : "2676.30", index == -1),
           _buildSideBox(index == -1 ? '金额' : "100.30", index == -1),
           _buildSideBox(index == -1 ? '扣重' : "100", index == -1),
           _buildSideBox(index == -1 ? '单价(元/kg)' : "11640", index == -1),
