@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meetingroom/models/meetingroom.dart';
 
 class BookingPage extends StatefulWidget {
   BookingPage({Key key, this.title}) : super(key: key);
@@ -9,6 +10,8 @@ class BookingPage extends StatefulWidget {
 }
 
 class _BookingPageState extends State<BookingPage> {
+  final List<MeetingRoom> _allRooms = MeetingRoom.allRooms();
+
   @override
   Widget build(BuildContext context) {
     var title = ModalRoute.of(context).settings.arguments;
@@ -64,21 +67,24 @@ class _BookingPageState extends State<BookingPage> {
         //第一行样式 添加背景色
         children: [
           //增加行高
-          _buildSideBox(index == -1 ? '纸品种类' : "黄边纸", index == -1),
+          _buildSideBox(index == -1 ? '时间段' : "黄边纸", index == -1),
         ]);
   }
 
 //创建一行tableRow
   TableRow _buildSingleRow(int index) {
-    return TableRow(
-        //第一行样式 添加背景色
-        children: [
-          _buildSideBox(index == -1 ? '时间段' : "2676.30", index == -1),
-          _buildSideBox(index == -1 ? '金额' : "100.30", index == -1),
-          _buildSideBox(index == -1 ? '扣重' : "100", index == -1),
-          _buildSideBox(index == -1 ? '单价(元/kg)' : "11640", index == -1),
-          _buildSideBox(index == -1 ? '磅重(kg)' : "45", index == -1),
-        ]);
+    List<Widget> sideBoxList = new List();
+    if (index == -1) {
+      for (int i = 0; i < _allRooms.length; i++) {
+        sideBoxList.add(_buildSideBox(_allRooms[i].name, true));
+      }
+      return TableRow(children: sideBoxList);
+    } else {
+      for (int i = 0; i < _allRooms.length; i++) {
+        sideBoxList.add(_buildSingleButton());
+      }
+      return TableRow(children: sideBoxList);
+    }
   }
 
   //创建单个表格
@@ -98,5 +104,17 @@ class _BookingPageState extends State<BookingPage> {
               style: TextStyle(
                   fontSize: isTitle ? 14 : 12, color: Color(0xff757575)),
             )));
+  }
+
+  //创建单个Button
+  Widget _buildSingleButton() {
+    return Padding(
+      padding: EdgeInsets.only(left: 2.0),
+      child: MaterialButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          child: new Text('点我'),
+          onPressed: () {}),
+    );
   }
 }
