@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
             trailing: new Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context)
-                  .pushNamed("booking_page", arguments: _allRooms[index].name);
+                  .pushNamed("booking_page", arguments: "Booking Details");
             },
           )
         ],

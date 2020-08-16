@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meetingroom/models/meetingroom.dart';
+import 'package:meetingroom/models/timeinterval.dart';
 
 class BookingPage extends StatefulWidget {
   BookingPage({Key key, this.title}) : super(key: key);
@@ -11,6 +12,7 @@ class BookingPage extends StatefulWidget {
 
 class _BookingPageState extends State<BookingPage> {
   final List<MeetingRoom> _allRooms = MeetingRoom.allRooms();
+  final List<TimeInterval> _timeIntervals = TimeInterval.timeIntervallist();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class _BookingPageState extends State<BookingPage> {
   List<TableRow> _buildTableColumnOne() {
     List<TableRow> returnList = new List();
     returnList.add(_buildSingleColumnOne(-1));
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < _timeIntervals.length; i++) {
       returnList.add(_buildSingleColumnOne(i));
     }
     return returnList;
@@ -55,7 +57,7 @@ class _BookingPageState extends State<BookingPage> {
   List<TableRow> _buildTableRow() {
     List<TableRow> returnList = new List();
     returnList.add(_buildSingleRow(-1));
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < _timeIntervals.length; i++) {
       returnList.add(_buildSingleRow(i));
     }
     return returnList;
@@ -67,7 +69,8 @@ class _BookingPageState extends State<BookingPage> {
         //第一行样式 添加背景色
         children: [
           //增加行高
-          _buildSideBox(index == -1 ? '时间段' : "黄边纸", index == -1),
+          _buildSideBox(
+              index == -1 ? '时间段' : _timeIntervals[index].time, index == -1),
         ]);
   }
 
