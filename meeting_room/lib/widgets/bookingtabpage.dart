@@ -32,12 +32,24 @@ class _BookingTabPageState extends State<BookingTabPage> {
                 // labelPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                 labelStyle: TextStyle(fontSize: 14),
                 tabs: <Widget>[
-                  Tab(text: 'Tab1'),
-                  Tab(text: 'Tab1'),
-                  Tab(text: 'Tab1'),
-                  Tab(text: 'Tab1'),
-                  Tab(text: 'Tab1'),
-                  Tab(text: 'Tab1'),
+                  Tab(
+                    child: _tabTitle("星期一", "8/12"),
+                  ),
+                  Tab(
+                    child: _tabTitle("星期二", "8/13"),
+                  ),
+                  Tab(
+                    child: _tabTitle("星期三", "8/14"),
+                  ),
+                  Tab(
+                    child: _tabTitle("星期四", "8/15"),
+                  ),
+                  Tab(
+                    child: _tabTitle("星期五", "8/16"),
+                  ),
+                  Tab(
+                    child: _tabTitle("星期六", "8/17"),
+                  ),
                 ],
               ),
             ),
@@ -45,7 +57,9 @@ class _BookingTabPageState extends State<BookingTabPage> {
               flex: 1,
               child: TabBarView(
                 children: <Widget>[
-                  ListViewContnet(),
+                  ListViewContnet(
+                    time: "7/12",
+                  ),
                   ListViewContnet(),
                   ListViewContnet(),
                   ListViewContnet(),
@@ -59,31 +73,40 @@ class _BookingTabPageState extends State<BookingTabPage> {
       ),
     );
   }
+
+  Widget _tabTitle(String title, String subTitle) {
+    return Container(
+        child: Column(
+      children: <Widget>[Text(title), Text(subTitle)],
+    ));
+  }
 }
 
 class ListViewContnet extends StatelessWidget {
-  //const ListViewContnet({Key key}) : super(key: key);
+  ListViewContnet({Key key, this.time}) : super(key: key);
 
+  final String time;
   final List<MeetingRoom> _allRooms = MeetingRoom.allRooms();
   final List<TimeInterval> _timeIntervals = TimeInterval.timeIntervallist();
   @override
   Widget build(BuildContext context) {
     return Container(
+        alignment: Alignment.topLeft,
         child: Row(
-      children: <Widget>[
-        Container(
-          child: Table(children: _buildTableColumnOne()),
-          width: numRowWidth, //固定第一列
-        ),
-        Expanded(
-            child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Container(
-                  child: Table(children: _buildTableRow()),
-                  width: numRowWidth * 6,
-                )))
-      ],
-    ));
+          children: <Widget>[
+            Container(
+              child: Table(children: _buildTableColumnOne()),
+              width: numRowWidth, //固定第一列
+            ),
+            Expanded(
+                child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Container(
+                      child: Table(children: _buildTableRow()),
+                      width: numRowWidth * 6,
+                    )))
+          ],
+        ));
   }
 
   //创建第一列行
