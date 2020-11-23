@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
 
   List<String> titleItems = <String>[
     'ListView',
-    'GraidView',
+    'CardView',
     'Test',
     'Test',
     'Test',
@@ -98,6 +98,7 @@ class _HomePageState extends State<HomePage> {
       trailing: new Icon(Icons.keyboard_arrow_right),
       onTap: () {
         if (titleItem == "ListView") Navigator.pushNamed(context, titleItem);
+        if (titleItem == "CardView") Navigator.pushNamed(context, titleItem);
       },
     );
   }

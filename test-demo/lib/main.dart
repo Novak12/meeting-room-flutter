@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meetingroomflutter/widgets/pages/cardview.dart';
 import 'package:meetingroomflutter/widgets/pages/home.dart';
 import 'package:meetingroomflutter/widgets/pages/listview.dart';
 import 'package:meetingroomflutter/widgets/pages/login.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => Login(),
         "home_page": (context) => HomePage(title: "flutter Demo List"),
         "ListView": (context) => ListViewPage(),
+        "CardView": (context) => CardPage(),
       },
     );
   }
